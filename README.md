@@ -160,13 +160,6 @@ Built specifically for lateral entry diploma students transitioning to B.Tech pr
 - Social integration and peer support
 - Confidence building and stress relief
 
-## Contact Information
-
-- **Email**: support@lateralbridge.edu
-- **Phone**: +91 000-0000-000
-- **Location**: Visakhapatnam, Andhra Pradesh
-- **Support**: Available 24/7
-
 ---
 
 **Built with care for lateral entry students** 
