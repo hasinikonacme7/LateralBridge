@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Self Assessment - Track Your Progress | LateralBridge</title>
+  <meta name="description" content="Test your knowledge, track your progress, and identify areas for improvement with our interactive quizzes">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .quiz-option {
+      width: 100%;
+      padding: 1.5rem;
+      border-radius: 12px;
+      text-align: left;
+      background-color: rgba(147, 51, 234, 0.1);
+      border: 2px solid rgba(147, 51, 234, 0.3);
+      color: var(--purple-200);
+      margin-bottom: 1rem;
+      transition: all 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .quiz-option:hover {
+      background-color: rgba(147, 51, 234, 0.2);
+      border-color: rgba(147, 51, 234, 0.5);
+    }
+    .quiz-option.selected {
+      background: linear-gradient(to right, var(--purple-600), var(--teal-600));
+      border-color: transparent;
+      color: white;
+      box-shadow: 0 4px 16px rgba(147, 51, 234, 0.5);
+    }
+    .option-check {
+      width: 2rem;
+      height: 2rem;
+      border-radius: 50%;
+      border: 2px solid rgba(147, 51, 234, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .quiz-option.selected .option-check {
+      background-color: white;
+      border-color: white;
+    }
+    .progress-bar {
+      height: 12px;
+      background-color: var(--bg-secondary);
+      border-radius: 9999px;
+      overflow: hidden;
+      border: 1px solid rgba(147, 51, 234, 0.2);
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(to right, var(--purple-600), var(--teal-600));
+      transition: width 0.5s;
+    }
+    .quiz-trophy {
+      font-size: 4rem;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo">
+          <div class="logo-icon-wrapper">
+            <div class="logo-glow"></div>
+            <div class="logo-icon">
+              <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </div>
+          </div>
+          <div class="logo-text-wrapper">
+            <h1>LateralBridge</h1>
+            <div class="logo-tagline">
+              <svg class="icon icon-sm" style="color: var(--teal-400);" viewBox="0 0 24 24">
+                <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+              <span>Empowering Students</span>
+            </div>
+          </div>
+        </a>
+
+        <nav class="nav-desktop">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="learning-bridge.html" class="nav-link">Learning Bridge</a>
+          <a href="self-assessment.html" class="nav-link">Assessment</a>
+          <a href="mentor-support.html" class="nav-link">Mentorship</a>
+          <a href="transition-toolkit.html" class="nav-link">Toolkit</a>
+          <a href="feedback.html" class="nav-link">Contact</a>
+        </nav>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <svg id="menuIcon" class="icon" style="color: var(--purple-300);" viewBox="0 0 24 24">
+            <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          <svg id="closeIcon" class="icon" style="color: var(--purple-300); display: none;" viewBox="0 0 24 24">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="nav-mobile" id="mobileMenu">
+        <div class="nav-mobile-links">
+          <a href="index.html" class="nav-mobile-link">Home</a>
+          <a href="about.html" class="nav-mobile-link">About</a>
+          <a href="learning-bridge.html" class="nav-mobile-link">Learning Bridge</a>
+          <a href="self-assessment.html" class="nav-mobile-link">Assessment</a>
+          <a href="mentor-support.html" class="nav-mobile-link">Mentorship</a>
+          <a href="transition-toolkit.html" class="nav-mobile-link">Toolkit</a>
+          <a href="feedback.html" class="nav-mobile-link">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 70vh;">
+      <div class="hero-bg">
+        <img src="https://images.unsplash.com/photo-1739858446889-b20d63614d73?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50JTIwd3JpdGluZyUyMG5vdGVzJTIwaGFwcHl8ZW58MXx8fHwxNzcxODQ4NDQwfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Student writing notes">
+        <div class="hero-overlay"></div>
+      </div>
+      
+      <div class="container">
+        <div class="hero-content" style="padding: 6rem 0;">
+          <div class="hero-badge">
+            <svg class="icon icon-sm" style="color: var(--teal-400);" viewBox="0 0 24 24">
+              <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            <span>Track Your Progress</span>
+          </div>
+          
+          <h2 class="hero-title" style="font-size: 3rem;">
+            <span style="color: white;">Self </span>
+            <span class="text-gradient">Assessment</span>
+          </h2>
+          
+          <p class="hero-description" style="font-size: 1.25rem;">
+            Test your knowledge, track your progress, and identify areas for improvement with our interactive quizzes
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="section bg-dark-2">
+      <div class="container">
+        <div class="grid grid-3">
+          <div class="text-center">
+            <div class="card" style="padding: 2rem;">
+              <div style="width: 4rem; height: 4rem; border-radius: 12px; background: linear-gradient(to bottom right, var(--purple-600), var(--teal-600)); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto;">
+                <svg class="icon-lg" style="color: white;" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                  <circle cx="12" cy="12" r="4" fill="currentColor"/>
+                </svg>
+              </div>
+              <div class="text-gradient" style="font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;">50+</div>
+              <p style="color: var(--purple-300);">Practice Quizzes</p>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <div class="card" style="padding: 2rem;">
+              <div style="width: 4rem; height: 4rem; border-radius: 12px; background: linear-gradient(to bottom right, var(--purple-600), var(--teal-600)); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto;">
+                <svg class="icon-lg" style="color: white;" viewBox="0 0 24 24">
+                  <path d="M3 3v18h18M7 12l4-4 4 4 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+              </div>
+              <div class="text-gradient" style="font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;">Real-time</div>
+              <p style="color: var(--purple-300);">Progress Tracking</p>
+            </div>
+          </div>
+
+          <div class="text-center">
+            <div class="card" style="padding: 2rem;">
+              <div style="width: 4rem; height: 4rem; border-radius: 12px; background: linear-gradient(to bottom right, var(--purple-600), var(--teal-600)); display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto;">
+                <svg class="icon-lg" style="color: white;" viewBox="0 0 24 24">
+                  <circle cx="12" cy="8" r="6" stroke="currentColor" stroke-width="2" fill="none"/>
+                  <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+              </div>
+              <div class="text-gradient" style="font-size: 2rem; font-weight: 700; margin-bottom: 0.5rem;">Instant</div>
+              <p style="color: var(--purple-300);">Feedback & Results</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quiz Container or Quiz Cards -->
+    <section class="section bg-dark-1" id="quizSection">
+      <div class="container">
+        <div class="text-center mb-6">
+          <h2 class="section-title">
+            <span style="color: white;">Available </span>
+            <span class="text-gradient">Assessments</span>
+          </h2>
+          <p class="section-subtitle">Choose a quiz to test your knowledge</p>
+        </div>
+
+        <div id="quizContainer">
+          <div class="grid grid-3">
+            <!-- Quiz 1 -->
+            <div class="card">
+              <div class="card-glow"></div>
+              <div class="card-image">
+                <img src="https://images.unsplash.com/photo-1614492898637-435e0f87cef8?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50JTIwdGFraW5nJTIwZXhhbSUyMGZvY3VzZWR8ZW58MXx8fHwxNzcxODQ4NDM4fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Mathematics Assessment">
+                <div class="card-image-overlay"></div>
+              </div>
+              <div class="card-content">
+                <div class="card-icon gradient-purple">
+                  <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                    <path d="M12 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </div>
+                <h3 class="card-title" style="margin-bottom: 0.75rem;">Mathematics Assessment</h3>
+                <div style="color: var(--purple-300); font-size: 0.875rem; margin-bottom: 1.5rem;">
+                  <p style="margin-bottom: 0.5rem;">📊 15 questions</p>
+                  <p style="margin-bottom: 0.5rem;">⏱️ 20 mins</p>
+                  <p>🎯 Intermediate</p>
+                </div>
+                <button onclick="quiz.startQuiz(0)" class="btn-primary" style="width: 100%; background: linear-gradient(to bottom right, var(--purple-600), var(--purple-800));">
+                  Start Assessment
+                  <svg class="icon" viewBox="0 0 24 24">
+                    <polygon points="6 3 20 12 6 21 6 3" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Quiz 2 -->
+            <div class="card">
+              <div class="card-glow"></div>
+              <div class="card-image">
+                <img src="https://images.unsplash.com/photo-1648747640271-e0270e2dac1c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxlZHVjYXRpb24lMjB0ZWNobm9sb2d5JTIwbGFwdG9wJTIwc3R1ZGVudHN8ZW58MXx8fHwxNzcxNzM4MDczfDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Programming Basics">
+                <div class="card-image-overlay"></div>
+              </div>
+              <div class="card-content">
+                <div class="card-icon gradient-teal">
+                  <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                    <circle cx="12" cy="8" r="6" stroke="currentColor" stroke-width="2" fill="none"/>
+                    <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  </svg>
+                </div>
+                <h3 class="card-title" style="margin-bottom: 0.75rem;">Programming Basics</h3>
+                <div style="color: var(--purple-300); font-size: 0.875rem; margin-bottom: 1.5rem;">
+                  <p style="margin-bottom: 0.5rem;">📊 20 questions</p>
+                  <p style="margin-bottom: 0.5rem;">⏱️ 25 mins</p>
+                  <p>🎯 Beginner</p>
+                </div>
+                <div style="margin-bottom: 1.5rem;">
+                  <div style="display: flex; justify-content: space-between; font-size: 0.875rem; color: var(--purple-400); margin-bottom: 0.5rem;">
+                    <span>Progress</span>
+                    <span>45%</span>
+                  </div>
+                  <div style="height: 0.5rem; background-color: rgba(147, 51, 234, 0.2); border-radius: 9999px; overflow: hidden;">
+                    <div style="width: 45%; height: 100%; background: linear-gradient(to right, var(--purple-600), var(--teal-600));"></div>
+                  </div>
+                </div>
+                <button onclick="quiz.startQuiz(1)" class="btn-primary" style="width: 100%; background: linear-gradient(to bottom right, var(--teal-600), var(--teal-800));">
+                  Continue Assessment
+                  <svg class="icon" viewBox="0 0 24 24">
+                    <polygon points="6 3 20 12 6 21 6 3" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+
+            <!-- Quiz 3 -->
+            <div class="card">
+              <div class="card-glow"></div>
+              <div class="card-image">
+                <img src="https://images.unsplash.com/photo-1728023881214-1d71a7a30a01?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkZW50cyUyMHRlYW13b3JrJTIwY29sbGFib3JhdGlvbnxlbnwxfHx8fDE3NzE2OTM5Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080" alt="Engineering Fundamentals">
+                <div class="card-image-overlay"></div>
+              </div>
+              <div class="card-content">
+                <div class="card-icon gradient-purple-teal-mix">
+                  <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                    <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  </svg>
+                </div>
+                <h3 class="card-title" style="margin-bottom: 0.75rem;">Engineering Fundamentals</h3>
+                <div style="color: var(--purple-300); font-size: 0.875rem; margin-bottom: 1.5rem;">
+                  <p style="margin-bottom: 0.5rem;">📊 18 questions</p>
+                  <p style="margin-bottom: 0.5rem;">⏱️ 30 mins</p>
+                  <p>🎯 Advanced</p>
+                </div>
+                <button onclick="quiz.startQuiz(2)" class="btn-primary" style="width: 100%; background: linear-gradient(to bottom right, var(--purple-700), var(--teal-700));">
+                  Start Assessment
+                  <svg class="icon" viewBox="0 0 24 24">
+                    <polygon points="6 3 20 12 6 21 6 3" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="hero" style="min-height: auto;">
+      <div class="hero-bg">
+        <img src="https://i.pinimg.com/1200x/c0/f0/16/c0f0167a545b3e55eded2d51622b17fa.jpg" alt="College friends studying">
+        <div class="hero-overlay"></div>
+      </div>
+      
+      <div class="container" style="position: relative; z-index: 10; padding: 6rem 0;">
+        <div style="max-width: 56rem; margin: 0 auto;">
+          <h2 class="section-title" style="color: white; margin-bottom: 2rem;">
+            Why Take <span class="text-gradient">Assessments?</span>
+          </h2>
+          <div class="grid grid-2">
+            <div style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.2);">
+              <h4 style="font-size: 1.25rem; color: white; margin-bottom: 0.5rem;">Identify Knowledge Gaps</h4>
+              <p style="color: var(--purple-100);">Discover areas that need more focus and attention</p>
+            </div>
+            <div style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.2);">
+              <h4 style="font-size: 1.25rem; color: white; margin-bottom: 0.5rem;">Track Your Progress</h4>
+              <p style="color: var(--purple-100);">Monitor improvement over time with detailed analytics</p>
+            </div>
+            <div style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.2);">
+              <h4 style="font-size: 1.25rem; color: white; margin-bottom: 0.5rem;">Build Confidence</h4>
+              <p style="color: var(--purple-100);">Practice makes perfect - reinforce your learning</p>
+            </div>
+            <div style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.2);">
+              <h4 style="font-size: 1.25rem; color: white; margin-bottom: 0.5rem;">Prepare for Exams</h4>
+              <p style="color: var(--purple-100);">Get exam-ready with realistic practice questions</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <div style="position: relative;">
+              <div style="position: absolute; inset: 0; background: linear-gradient(to right, var(--purple-600), var(--teal-500)); border-radius: 12px; filter: blur(12px); opacity: 0.75;"></div>
+              <div style="position: relative; width: 40px; height: 40px; background: linear-gradient(to bottom right, var(--purple-600), var(--teal-500)); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+              </div>
+            </div>
+            <span class="text-gradient" style="font-size: 1.25rem; font-weight: 700;">LateralBridge</span>
+          </div>
+          <p class="footer-text">
+            Bridging the knowledge gap for lateral entry B.Tech students through comprehensive support and resources.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="learning-bridge.html" class="footer-link"><span class="footer-bullet"></span> Foundation Courses</a></li>
+            <li><a href="self-assessment.html" class="footer-link"><span class="footer-bullet"></span> Take Assessment</a></li>
+            <li><a href="mentor-support.html" class="footer-link"><span class="footer-bullet"></span> Find a Mentor</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p class="footer-text mb-1">Email: support@lateralbridge.edu</p>
+          <p class="footer-text mb-1">Phone No: +91 8985-514-495</p>
+          <p class="footer-text">Help Desk: Available 24/7</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          &copy; 2026 LateralBridge. All rights reserved. Built with care for lateral entry students.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

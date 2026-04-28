@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transition Toolkit - Study Resources | LateralBridge</title>
+  <meta name="description" content="Access comprehensive study materials, video tutorials, and resources designed specifically for lateral entry students">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .resource-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.5rem;
+      background-color: rgba(147, 51, 234, 0.1);
+      border-radius: 12px;
+      border: 1px solid rgba(147, 51, 234, 0.2);
+      margin-bottom: 0.75rem;
+      transition: all 0.3s;
+      cursor: pointer;
+    }
+    .resource-item:hover {
+      background-color: rgba(147, 51, 234, 0.2);
+      border-color: rgba(147, 51, 234, 0.4);
+    }
+    .download-btn {
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 8px;
+      background: linear-gradient(to bottom right, var(--purple-600), var(--teal-600));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+      flex-shrink: 0;
+    }
+    .resource-item:hover .download-btn {
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo">
+          <div class="logo-icon-wrapper">
+            <div class="logo-glow"></div>
+            <div class="logo-icon">
+              <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </div>
+          </div>
+          <div class="logo-text-wrapper">
+            <h1>LateralBridge</h1>
+            <div class="logo-tagline">
+              <svg class="icon icon-sm" style="color: var(--teal-400);" viewBox="0 0 24 24">
+                <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+              <span>Empowering Students</span>
+            </div>
+          </div>
+        </a>
+
+        <nav class="nav-desktop">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="learning-bridge.html" class="nav-link">Learning Bridge</a>
+          <a href="self-assessment.html" class="nav-link">Assessment</a>
+          <a href="mentor-support.html" class="nav-link">Mentorship</a>
+          <a href="transition-toolkit.html" class="nav-link">Toolkit</a>
+          <a href="feedback.html" class="nav-link">Contact</a>
+        </nav>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <svg id="menuIcon" class="icon" style="color: var(--purple-300);" viewBox="0 0 24 24">
+            <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          <svg id="closeIcon" class="icon" style="color: var(--purple-300); display: none;" viewBox="0 0 24 24">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="nav-mobile" id="mobileMenu">
+        <div class="nav-mobile-links">
+          <a href="index.html" class="nav-mobile-link">Home</a>
+          <a href="about.html" class="nav-mobile-link">About</a>
+          <a href="learning-bridge.html" class="nav-mobile-link">Learning Bridge</a>
+          <a href="self-assessment.html" class="nav-mobile-link">Assessment</a>
+          <a href="mentor-support.html" class="nav-mobile-link">Mentorship</a>
+          <a href="transition-toolkit.html" class="nav-mobile-link">Toolkit</a>
+          <a href="feedback.html" class="nav-mobile-link">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 70vh;">
+      <div class="hero-bg">
+        <img src="https://images.unsplash.com/photo-1769794370969-eee773593604?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHVkeSUyMHJlc291cmNlcyUyMGJvb2tzJTIwbm90ZXN8ZW58MXx8fHwxNzcxODQ5NDk5fDA&ixlib=rb-4.1.0&q=80&w=1080" alt="Study resources and books">
+        <div class="hero-overlay"></div>
+      </div>
+      
+      <div class="container">
+        <div class="hero-content" style="padding: 6rem 0;">
+          <div class="hero-badge">
+            <svg class="icon icon-sm" style="color: var(--teal-400);" viewBox="0 0 24 24">
+              <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            <span>Everything You Need to Succeed</span>
+          </div>
+          
+          <h2 class="hero-title" style="font-size: 3rem;">
+            <span style="color: white;">Transition </span>
+            <span class="text-gradient">Toolkit</span>
+          </h2>
+          
+          <p class="hero-description" style="font-size: 1.25rem;">
+            Access comprehensive study materials, video tutorials, and resources designed specifically for lateral entry students
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tools Section -->
+    <section class="section bg-dark-2">
+      <div class="container">
+        <div class="text-center mb-6">
+          <h2 class="section-title">
+            <span style="color: white;">Your </span>
+            <span class="text-gradient">Learning Tools</span>
+          </h2>
+          <p class="section-subtitle">Powerful features to enhance your learning experience</p>
+        </div>
+
+        <div class="grid grid-4">
+          <div class="card" style="text-align: center; padding: 2rem;">
+            <div class="card-icon gradient-purple" style="margin: 0 auto 1.5rem;">
+              <svg class="icon-lg" style="color: white;" viewBox="0 0 24 24">
+                <path d="M22 12h-4l-3 9L9 3l-3 9H2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </div>
+            <h3 style="font-size: 1.25rem; color: white; margin-bottom: 0.75rem;">Progress Tracker</h3>
+            <p style="color: var(--purple-300);">Monitor your learning journey and set goals</p>
+          </div>
+
+          <div class="card" style="text-align: center; padding: 2rem;">
+            <div class="card-icon gradient-teal" style="margin: 0 auto 1.5rem;">
+              <svg class="icon-lg" style="color: white;" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                <circle cx="12" cy="12" r="4" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3 style="font-size: 1.25rem; color: white; margin-bottom: 0.75rem;">Goal Planner</h3>
+            <p style="color: var(--purple-300);">Set and achieve your academic milestones</p>
+          </div>
+
+          <div class="card" style="text-align: center; padding: 2rem;">
+            <div class="card-icon gradient-purple-teal-mix" style="margin: 0 auto 1.5rem;">
+              <svg class="icon-lg" style="color: white;" viewBox="0 0 24 24">
+                <path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </div>
+            <h3 style="font-size: 1.25rem; color: white; margin-bottom: 0.75rem;">Resource Bookmarks</h3>
+            <p style="color: var(--purple-300);">Save and organize your favorite materials</p>
+          </div>
+
+          <div class="card" style="text-align: center; padding: 2rem;">
+            <div class="card-icon gradient-purple-teal-mix" style="margin: 0 auto 1.5rem;">
+              <svg class="icon-lg" style="color: white;" viewBox="0 0 24 24">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="m9 11 3 3L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </div>
+            <h3 style="font-size: 1.25rem; color: white; margin-bottom: 0.75rem;">Completion Certificates</h3>
+            <p style="color: var(--purple-300);">Earn certificates for completed modules</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Study Resources -->
+    <section class="section bg-dark-1">
+      <div class="container">
+        <div class="text-center mb-6">
+          <h2 class="section-title">
+            <span style="color: white;">Study </span>
+            <span class="text-gradient">Resources</span>
+          </h2>
+          <p class="section-subtitle">Comprehensive materials organized by category</p>
+        </div>
+
+        <div class="grid grid-2">
+          <!-- Study Plans -->
+          <div class="card">
+            <div class="card-glow"></div>
+            <div class="card-content">
+              <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                <div class="card-icon gradient-purple">
+                  <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                    <path d="M16 2v4M8 2v4M3 10h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="card-title" style="margin-bottom: 0.5rem;">Study Plans</h3>
+                  <p style="color: var(--purple-300); font-size: 0.875rem;">Structured learning paths tailored for lateral entry students</p>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 1.5rem;">
+                <div class="resource-item">
+                  <div style="flex: 1;">
+                    <p style="color: white; margin-bottom: 0.25rem;">30-Day Math Bootcamp</p>
+                    <div style="display: flex; gap: 0.75rem; font-size: 0.875rem; color: var(--purple-400);">
+                      <span>PDF Guide</span>
+                      <span>•</span>
+                      <span>2.4 MB</span>
+                    </div>
+                  </div>
+                  <div class="download-btn">
+                    <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="resource-item">
+                  <div style="flex: 1;">
+                    <p style="color: white; margin-bottom: 0.25rem;">Programming Roadmap</p>
+                    <div style="display: flex; gap: 0.75rem; font-size: 0.875rem; color: var(--purple-400);">
+                      <span>Interactive Plan</span>
+                      <span>•</span>
+                      <span>1.8 MB</span>
+                    </div>
+                  </div>
+                  <div class="download-btn">
+                    <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="resource-item">
+                  <div style="flex: 1;">
+                    <p style="color: white; margin-bottom: 0.25rem;">Engineering Basics Timeline</p>
+                    <div style="display: flex; gap: 0.75rem; font-size: 0.875rem; color: var(--purple-400);">
+                      <span>PDF Guide</span>
+                      <span>•</span>
+                      <span>3.1 MB</span>
+                    </div>
+                  </div>
+                  <div class="download-btn">
+                    <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="resource-item">
+                  <div style="flex: 1;">
+                    <p style="color: white; margin-bottom: 0.25rem;">Weekly Study Schedule Template</p>
+                    <div style="display: flex; gap: 0.75rem; font-size: 0.875rem; color: var(--purple-400);">
+                      <span>Excel/PDF</span>
+                      <span>•</span>
+                      <span>0.5 MB</span>
+                    </div>
+                  </div>
+                  <div class="download-btn">
+                    <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn-primary" style="width: 100%;">
+                View All Study Plans
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Video Tutorials -->
+          <div class="card">
+            <div class="card-glow"></div>
+            <div class="card-content">
+              <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                <div class="card-icon gradient-teal">
+                  <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                    <polygon points="23 7 16 12 23 17 23 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    <rect x="1" y="5" width="15" height="14" rx="2" ry="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="card-title" style="margin-bottom: 0.5rem;">Video Tutorials</h3>
+                  <p style="color: var(--purple-300); font-size: 0.875rem;">Comprehensive video lectures from expert instructors</p>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 1.5rem;">
+                <div class="resource-item">
+                  <div style="flex: 1;">
+                    <p style="color: white; margin-bottom: 0.25rem;">Calculus Fundamentals Series</p>
+                    <div style="display: flex; gap: 0.75rem; font-size: 0.875rem; color: var(--purple-400);">
+                      <span>12 Videos</span>
+                      <span>•</span>
+                      <span>2.5 hrs</span>
+                    </div>
+                  </div>
+                  <div class="download-btn">
+                    <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                      <polygon points="6 3 20 12 6 21 6 3" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="resource-item">
+                  <div style="flex: 1;">
+                    <p style="color: white; margin-bottom: 0.25rem;">C Programming Masterclass</p>
+                    <div style="display: flex; gap: 0.75rem; font-size: 0.875rem; color: var(--purple-400);">
+                      <span>20 Videos</span>
+                      <span>•</span>
+                      <span>4 hrs</span>
+                    </div>
+                  </div>
+                  <div class="download-btn">
+                    <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                      <polygon points="6 3 20 12 6 21 6 3" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="resource-item">
+                  <div style="flex: 1;">
+                    <p style="color: white; margin-bottom: 0.25rem;">Engineering Mechanics Basics</p>
+                    <div style="display: flex; gap: 0.75rem; font-size: 0.875rem; color: var(--purple-400);">
+                      <span>15 Videos</span>
+                      <span>•</span>
+                      <span>3 hrs</span>
+                    </div>
+                  </div>
+                  <div class="download-btn">
+                    <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                      <polygon points="6 3 20 12 6 21 6 3" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="resource-item">
+                  <div style="flex: 1;">
+                    <p style="color: white; margin-bottom: 0.25rem;">Technical Communication Skills</p>
+                    <div style="display: flex; gap: 0.75rem; font-size: 0.875rem; color: var(--purple-400);">
+                      <span>8 Videos</span>
+                      <span>•</span>
+                      <span>1.5 hrs</span>
+                    </div>
+                  </div>
+                  <div class="download-btn">
+                    <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                      <polygon points="6 3 20 12 6 21 6 3" stroke="currentColor" stroke-width="2" fill="none"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn-primary" style="width: 100%; background: linear-gradient(to bottom right, var(--teal-600), var(--teal-800));">
+                View All Video Tutorials
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Reference Materials -->
+          <div class="card">
+            <div class="card-glow"></div>
+            <div class="card-content">
+              <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                <div class="card-icon gradient-purple-teal-mix">
+                  <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="card-title" style="margin-bottom: 0.5rem;">Reference Materials</h3>
+                  <p style="color: var(--purple-300); font-size: 0.875rem;">Curated textbooks, notes, and study materials</p>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 1.5rem;">
+                <div class="resource-item">
+                  <div style="flex: 1;">
+                    <p style="color: white; margin-bottom: 0.25rem;">Engineering Mathematics Handbook</p>
+                    <div style="display: flex; gap: 0.75rem; font-size: 0.875rem; color: var(--purple-400);">
+                      <span>PDF</span>
+                      <span>•</span>
+                      <span>15.2 MB</span>
+                    </div>
+                  </div>
+                  <div class="download-btn">
+                    <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="resource-item">
+                  <div style="flex: 1;">
+                    <p style="color: white; margin-bottom: 0.25rem;">Data Structures Cheat Sheet</p>
+                    <div style="display: flex; gap: 0.75rem; font-size: 0.875rem; color: var(--purple-400);">
+                      <span>PDF</span>
+                      <span>•</span>
+                      <span>4.3 MB</span>
+                    </div>
+                  </div>
+                  <div class="download-btn">
+                    <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="resource-item">
+                  <div style="flex: 1;">
+                    <p style="color: white; margin-bottom: 0.25rem;">Physics Formula Compendium</p>
+                    <div style="display: flex; gap: 0.75rem; font-size: 0.875rem; color: var(--purple-400);">
+                      <span>PDF</span>
+                      <span>•</span>
+                      <span>8.7 MB</span>
+                    </div>
+                  </div>
+                  <div class="download-btn">
+                    <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="resource-item">
+                  <div style="flex: 1;">
+                    <p style="color: white; margin-bottom: 0.25rem;">Essential Technical Terms Glossary</p>
+                    <div style="display: flex; gap: 0.75rem; font-size: 0.875rem; color: var(--purple-400);">
+                      <span>PDF</span>
+                      <span>•</span>
+                      <span>2.1 MB</span>
+                    </div>
+                  </div>
+                  <div class="download-btn">
+                    <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn-primary" style="width: 100%; background: linear-gradient(to bottom right, var(--purple-700), var(--teal-700));">
+                View All Reference Materials
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Practice Materials -->
+          <div class="card">
+            <div class="card-glow"></div>
+            <div class="card-content">
+              <div style="display: flex; gap: 1rem; margin-bottom: 1.5rem;">
+                <div class="card-icon gradient-purple-teal-mix">
+                  <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                    <path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    <path d="M14 2v6h6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  </svg>
+                </div>
+                <div>
+                  <h3 class="card-title" style="margin-bottom: 0.5rem;">Practice Materials</h3>
+                  <p style="color: var(--purple-300); font-size: 0.875rem;">Question banks, assignments, and practice tests</p>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 1.5rem;">
+                <div class="resource-item">
+                  <div style="flex: 1;">
+                    <p style="color: white; margin-bottom: 0.25rem;">500+ Math Practice Problems</p>
+                    <div style="display: flex; gap: 0.75rem; font-size: 0.875rem; color: var(--purple-400);">
+                      <span>PDF</span>
+                      <span>•</span>
+                      <span>6.8 MB</span>
+                    </div>
+                  </div>
+                  <div class="download-btn">
+                    <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="resource-item">
+                  <div style="flex: 1;">
+                    <p style="color: white; margin-bottom: 0.25rem;">Coding Challenges Collection</p>
+                    <div style="display: flex; gap: 0.75rem; font-size: 0.875rem; color: var(--purple-400);">
+                      <span>PDF</span>
+                      <span>•</span>
+                      <span>3.4 MB</span>
+                    </div>
+                  </div>
+                  <div class="download-btn">
+                    <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="resource-item">
+                  <div style="flex: 1;">
+                    <p style="color: white; margin-bottom: 0.25rem;">Previous Year Question Papers</p>
+                    <div style="display: flex; gap: 0.75rem; font-size: 0.875rem; color: var(--purple-400);">
+                      <span>ZIP</span>
+                      <span>•</span>
+                      <span>12.5 MB</span>
+                    </div>
+                  </div>
+                  <div class="download-btn">
+                    <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </div>
+                </div>
+
+                <div class="resource-item">
+                  <div style="flex: 1;">
+                    <p style="color: white; margin-bottom: 0.25rem;">Mock Test Series</p>
+                    <div style="display: flex; gap: 0.75rem; font-size: 0.875rem; color: var(--purple-400);">
+                      <span>Online</span>
+                      <span>•</span>
+                      <span>Access Link</span>
+                    </div>
+                  </div>
+                  <div class="download-btn">
+                    <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+
+              <button class="btn-primary" style="width: 100%; background: linear-gradient(to bottom right, var(--teal-700), var(--purple-700));">
+                View All Practice Materials
+                <svg class="icon" viewBox="0 0 24 24">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Resources -->
+    <section class="hero" style="min-height: auto;">
+      <div class="hero-bg">
+        <img src="https://i.pinimg.com/1200x/c0/f0/16/c0f0167a545b3e55eded2d51622b17fa.jpg" alt="Study planner">
+        <div class="hero-overlay"></div>
+      </div>
+      
+      <div class="container" style="position: relative; z-index: 10; padding: 6rem 0;">
+        <div style="max-width: 56rem; margin: 0 auto;">
+          <h2 class="section-title" style="color: white; margin-bottom: 2rem;">
+            Featured <span class="text-gradient">This Month</span>
+          </h2>
+          <div class="grid grid-2">
+            <div style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.2); cursor: pointer; transition: all 0.3s;" onmouseover="this.style.borderColor='rgba(255, 255, 255, 0.4)'" onmouseout="this.style.borderColor='rgba(255, 255, 255, 0.2)'">
+              <h4 style="font-size: 1.125rem; color: white; margin-bottom: 0.5rem;">Complete B.Tech Survival Guide</h4>
+              <p style="color: var(--purple-100); font-size: 0.875rem; margin-bottom: 1rem;">Essential tips and strategies for lateral entry students</p>
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <span style="color: var(--purple-300); font-size: 0.875rem;">2.4k downloads</span>
+                <svg class="icon" style="color: var(--teal-400);" viewBox="0 0 24 24">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+              </div>
+            </div>
+
+            <div style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.2); cursor: pointer; transition: all 0.3s;" onmouseover="this.style.borderColor='rgba(255, 255, 255, 0.4)'" onmouseout="this.style.borderColor='rgba(255, 255, 255, 0.2)'">
+              <h4 style="font-size: 1.125rem; color: white; margin-bottom: 0.5rem;">Industry Expert Interview Series</h4>
+              <p style="color: var(--purple-100); font-size: 0.875rem; margin-bottom: 1rem;">Video interviews with professionals sharing career insights</p>
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <span style="color: var(--purple-300); font-size: 0.875rem;">1.8k downloads</span>
+                <svg class="icon" style="color: var(--teal-400);" viewBox="0 0 24 24">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+              </div>
+            </div>
+
+            <div style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.2); cursor: pointer; transition: all 0.3s;" onmouseover="this.style.borderColor='rgba(255, 255, 255, 0.4)'" onmouseout="this.style.borderColor='rgba(255, 255, 255, 0.2)'">
+              <h4 style="font-size: 1.125rem; color: white; margin-bottom: 0.5rem;">Academic Calendar Template</h4>
+              <p style="color: var(--purple-100); font-size: 0.875rem; margin-bottom: 1rem;">Plan your semester with our customizable calendar</p>
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <span style="color: var(--purple-300); font-size: 0.875rem;">3.2k downloads</span>
+                <svg class="icon" style="color: var(--teal-400);" viewBox="0 0 24 24">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+              </div>
+            </div>
+
+            <div style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 16px; padding: 1.5rem; border: 1px solid rgba(255, 255, 255, 0.2); cursor: pointer; transition: all 0.3s;" onmouseover="this.style.borderColor='rgba(255, 255, 255, 0.4)'" onmouseout="this.style.borderColor='rgba(255, 255, 255, 0.2)'">
+              <h4 style="font-size: 1.125rem; color: white; margin-bottom: 0.5rem;">Career Preparation Toolkit</h4>
+              <p style="color: var(--purple-100); font-size: 0.875rem; margin-bottom: 1rem;">Resume templates, interview guides, and placement tips</p>
+              <div style="display: flex; align-items: center; justify-content: space-between;">
+                <span style="color: var(--purple-300); font-size: 0.875rem;">2.9k downloads</span>
+                <svg class="icon" style="color: var(--teal-400);" viewBox="0 0 24 24">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="background: linear-gradient(to bottom right, var(--bg-secondary), var(--bg-primary));">
+      <div class="container" style="max-width: 56rem;">
+        <div style="position: relative;">
+          <div style="position: absolute; inset: -4px; background: linear-gradient(to right, var(--purple-600), var(--teal-600)); border-radius: 24px; filter: blur(32px); opacity: 0.3;"></div>
+          <div style="position: relative; background-color: var(--bg-secondary); border-radius: 24px; padding: 3rem; border: 1px solid rgba(147, 51, 234, 0.3); text-align: center;">
+            <svg class="icon-xl" style="color: var(--teal-400); margin: 0 auto 1.5rem;" viewBox="0 0 24 24">
+              <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            <h3 style="font-size: 2rem; color: white; margin-bottom: 1.5rem;">Start Building Your Toolkit</h3>
+            <p style="color: var(--purple-200); font-size: 1.125rem; margin-bottom: 2rem;">
+              Access all resources and start your learning journey today
+            </p>
+            <button class="btn-primary">
+              Browse All Resources
+              <svg class="icon" viewBox="0 0 24 24">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <div style="position: relative;">
+              <div style="position: absolute; inset: 0; background: linear-gradient(to right, var(--purple-600), var(--teal-500)); border-radius: 12px; filter: blur(12px); opacity: 0.75;"></div>
+              <div style="position: relative; width: 40px; height: 40px; background: linear-gradient(to bottom right, var(--purple-600), var(--teal-500)); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+              </div>
+            </div>
+            <span class="text-gradient" style="font-size: 1.25rem; font-weight: 700;">LateralBridge</span>
+          </div>
+          <p class="footer-text">
+            Bridging the knowledge gap for lateral entry B.Tech students through comprehensive support and resources.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="learning-bridge.html" class="footer-link"><span class="footer-bullet"></span> Foundation Courses</a></li>
+            <li><a href="self-assessment.html" class="footer-link"><span class="footer-bullet"></span> Take Assessment</a></li>
+            <li><a href="mentor-support.html" class="footer-link"><span class="footer-bullet"></span> Find a Mentor</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p class="footer-text mb-1">Email: support@lateralbridge.edu</p>
+          <p class="footer-text mb-1">Phone No: +91 8985-514-495</p>
+          <p class="footer-text">Help Desk: Available 24/7</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          &copy; 2026 LateralBridge. All rights reserved. Built with care for lateral entry students.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

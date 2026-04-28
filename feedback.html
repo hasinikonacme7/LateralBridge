@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Feedback & Contact - Get in Touch | LateralBridge</title>
+  <meta name="description" content="Have questions or suggestions? We'd love to hear from you. Your feedback helps us improve!">
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .form-success {
+      display: none;
+      text-align: center;
+      padding: 3rem;
+    }
+    .form-success.active {
+      display: block;
+    }
+    .form-container.hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <a href="index.html" class="logo">
+          <div class="logo-icon-wrapper">
+            <div class="logo-glow"></div>
+            <div class="logo-icon">
+              <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                <path d="M22 10v6M2 10l10-5 10 5-10 5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <path d="M6 12v5c3 3 9 3 12 0v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </div>
+          </div>
+          <div class="logo-text-wrapper">
+            <h1>LateralBridge</h1>
+            <div class="logo-tagline">
+              <svg class="icon icon-sm" style="color: var(--teal-400);" viewBox="0 0 24 24">
+                <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+              <span>Empowering Students</span>
+            </div>
+          </div>
+        </a>
+
+        <nav class="nav-desktop">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="learning-bridge.html" class="nav-link">Learning Bridge</a>
+          <a href="self-assessment.html" class="nav-link">Assessment</a>
+          <a href="mentor-support.html" class="nav-link">Mentorship</a>
+          <a href="transition-toolkit.html" class="nav-link">Toolkit</a>
+          <a href="feedback.html" class="nav-link">Contact</a>
+        </nav>
+
+        <button class="mobile-menu-btn" id="mobileMenuBtn">
+          <svg id="menuIcon" class="icon" style="color: var(--purple-300);" viewBox="0 0 24 24">
+            <path d="M3 12h18M3 6h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          <svg id="closeIcon" class="icon" style="color: var(--purple-300); display: none;" viewBox="0 0 24 24">
+            <path d="M18 6L6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+        </button>
+      </div>
+
+      <div class="nav-mobile" id="mobileMenu">
+        <div class="nav-mobile-links">
+          <a href="index.html" class="nav-mobile-link">Home</a>
+          <a href="about.html" class="nav-mobile-link">About</a>
+          <a href="learning-bridge.html" class="nav-mobile-link">Learning Bridge</a>
+          <a href="self-assessment.html" class="nav-mobile-link">Assessment</a>
+          <a href="mentor-support.html" class="nav-mobile-link">Mentorship</a>
+          <a href="transition-toolkit.html" class="nav-mobile-link">Toolkit</a>
+          <a href="feedback.html" class="nav-mobile-link">Contact</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Hero Section -->
+    <section class="hero" style="min-height: 70vh;">
+      <div class="hero-bg">
+        <img src="https://i.pinimg.com/1200x/64/f1/d5/64f1d56c076d35501c23409b5ec61593.jpg" alt="Student support contact">
+        <div class="hero-overlay"></div>
+      </div>
+      
+      <div class="container">
+        <div class="hero-content" style="padding: 6rem 0;">
+          <div class="hero-badge">
+            <svg class="icon icon-sm" style="color: var(--teal-400);" viewBox="0 0 24 24">
+              <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            <span>We're Here to Help</span>
+          </div>
+          
+          <h2 class="hero-title" style="font-size: 3rem;">
+            <span style="color: white;">Feedback & </span>
+            <span class="text-gradient">Contact</span>
+          </h2>
+          
+          <p class="hero-description" style="font-size: 1.25rem;">
+            Have questions or suggestions? We'd love to hear from you. Your feedback helps us improve!
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Methods -->
+    <section class="section bg-dark-2">
+      <div class="container">
+        <div class="text-center mb-6">
+          <h2 class="section-title">
+            <span style="color: white;">Get in </span>
+            <span class="text-gradient">Touch</span>
+          </h2>
+          <p class="section-subtitle">Multiple ways to reach us</p>
+        </div>
+
+        <div class="grid grid-3">
+          <div class="card" style="text-align: center; padding: 2rem;">
+            <div class="card-glow"></div>
+            <div class="card-icon gradient-purple" style="margin: 0 auto 1.5rem;">
+              <svg class="icon-lg" style="color: white;" viewBox="0 0 24 24">
+                <rect width="20" height="16" x="2" y="4" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </div>
+            <h3 style="font-size: 1.5rem; color: white; margin-bottom: 0.75rem;">Email Us</h3>
+            <p style="color: var(--teal-300); font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">support@lateralbridge.com</p>
+            <p style="color: var(--purple-300);">We'll respond within 24 hours</p>
+          </div>
+
+          <div class="card" style="text-align: center; padding: 2rem;">
+            <div class="card-glow"></div>
+            <div class="card-icon gradient-teal" style="margin: 0 auto 1.5rem;">
+              <svg class="icon-lg" style="color: white;" viewBox="0 0 24 24">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              </svg>
+            </div>
+            <h3 style="font-size: 1.5rem; color: white; margin-bottom: 0.75rem;">Call Us</h3>
+            <p style="color: var(--teal-300); font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">+91 8985-514-495</p>
+            <p style="color: var(--purple-300);">Mon-Fri, 9 AM - 6 PM IST</p>
+          </div>
+
+          <div class="card" style="text-align: center; padding: 2rem;">
+            <div class="card-glow"></div>
+            <div class="card-icon gradient-purple-teal-mix" style="margin: 0 auto 1.5rem;">
+              <svg class="icon-lg" style="color: white;" viewBox="0 0 24 24">
+                <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                <circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2" fill="none"/>
+              </svg>
+            </div>
+            <h3 style="font-size: 1.5rem; color: white; margin-bottom: 0.75rem;">Visit Us</h3>
+            <p style="color: var(--teal-300); font-size: 1.125rem; font-weight: 600; margin-bottom: 0.5rem;">Visakhapatnam, Andhra Pradesh</p>
+            <p style="color: var(--purple-300);">Schedule an appointment</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form & FAQ -->
+    <section class="section bg-dark-1">
+      <div class="container">
+        <div class="grid grid-2" style="align-items: start;">
+          <!-- Contact Form -->
+          <div style="position: relative;">
+            <div style="position: absolute; inset: -4px; background: linear-gradient(to right, var(--purple-600), var(--teal-600)); border-radius: 24px; filter: blur(24px); opacity: 0.3;"></div>
+            <div style="position: relative; background-color: var(--bg-secondary); border-radius: 24px; padding: 2.5rem; border: 1px solid rgba(147, 51, 234, 0.3);">
+              <h2 style="font-size: 2rem; margin-bottom: 2rem; color: white;">
+                Send Us a <span class="text-gradient">Message</span>
+              </h2>
+
+              <div class="form-container" id="formContainer">
+                <form id="contactForm" onsubmit="handleFormSubmit(event)">
+                  <div style="margin-bottom: 1.5rem;">
+                    <label for="name">Full Name</label>
+                    <input type="text" id="name" name="name" required placeholder="Your name">
+                  </div>
+
+                  <div style="margin-bottom: 1.5rem;">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                  </div>
+
+                  <div style="margin-bottom: 1.5rem;">
+                    <label for="category">Category</label>
+                    <select id="category" name="category" required>
+                      <option value="">Select a category</option>
+                      <option value="general">General Inquiry</option>
+                      <option value="technical">Technical Support</option>
+                      <option value="feedback">Feedback</option>
+                      <option value="suggestion">Suggestion</option>
+                      <option value="complaint">Complaint</option>
+                    </select>
+                  </div>
+
+                  <div style="margin-bottom: 2rem;">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" required placeholder="Tell us more..."></textarea>
+                  </div>
+
+                  <button type="submit" class="btn-primary" style="width: 100%;">
+                    Send Message
+                    <svg class="icon" viewBox="0 0 24 24">
+                      <path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                      <path d="m21.854 2.147-10.94 10.939" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </button>
+                </form>
+              </div>
+
+              <div class="form-success" id="formSuccess">
+                <div style="width: 5rem; height: 5rem; border-radius: 50%; background: linear-gradient(to bottom right, var(--teal-600), var(--teal-800)); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                  <svg class="icon-xl" style="color: white;" viewBox="0 0 24 24">
+                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    <path d="m9 11 3 3L22 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  </svg>
+                </div>
+                <h3 style="font-size: 1.5rem; color: white; margin-bottom: 0.75rem;">Thank You!</h3>
+                <p style="color: var(--purple-300);">Your message has been sent successfully. We'll get back to you soon.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- FAQ Section -->
+          <div>
+            <h2 style="font-size: 2rem; margin-bottom: 2rem; color: white;">
+              Frequently Asked <span class="text-gradient">Questions</span>
+            </h2>
+            <p style="color: var(--purple-300); margin-bottom: 2rem;">Quick answers to common questions</p>
+
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+              <!-- FAQ Category 1 -->
+              <div class="card">
+                <div class="card-glow"></div>
+                <div class="card-content" style="padding: 1.5rem;">
+                  <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                    <div class="card-icon gradient-purple" style="width: 3rem; height: 3rem; margin: 0;">
+                      <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                        <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                      </svg>
+                    </div>
+                    <h3 style="font-size: 1.25rem; color: white; padding-top: 0.5rem;">Getting Started</h3>
+                  </div>
+                  <div style="margin-left: 4rem; color: var(--purple-300); font-size: 0.875rem;">
+                    <p style="margin-bottom: 0.5rem; cursor: pointer; transition: color 0.3s;" onmouseover="this.style.color='var(--teal-300)'" onmouseout="this.style.color='var(--purple-300)'">→ How do I enroll in courses?</p>
+                    <p style="margin-bottom: 0.5rem; cursor: pointer; transition: color 0.3s;" onmouseover="this.style.color='var(--teal-300)'" onmouseout="this.style.color='var(--purple-300)'">→ What are the prerequisites?</p>
+                    <p style="cursor: pointer; transition: color 0.3s;" onmouseover="this.style.color='var(--teal-300)'" onmouseout="this.style.color='var(--purple-300)'">→ Is there a mobile app available?</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ Category 2 -->
+              <div class="card">
+                <div class="card-glow"></div>
+                <div class="card-content" style="padding: 1.5rem;">
+                  <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                    <div class="card-icon gradient-teal" style="width: 3rem; height: 3rem; margin: 0;">
+                      <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                        <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                      </svg>
+                    </div>
+                    <h3 style="font-size: 1.25rem; color: white; padding-top: 0.5rem;">Technical Support</h3>
+                  </div>
+                  <div style="margin-left: 4rem; color: var(--purple-300); font-size: 0.875rem;">
+                    <p style="margin-bottom: 0.5rem; cursor: pointer; transition: color 0.3s;" onmouseover="this.style.color='var(--teal-300)'" onmouseout="this.style.color='var(--purple-300)'">→ I can't access my account</p>
+                    <p style="margin-bottom: 0.5rem; cursor: pointer; transition: color 0.3s;" onmouseover="this.style.color='var(--teal-300)'" onmouseout="this.style.color='var(--purple-300)'">→ Video playback issues</p>
+                    <p style="cursor: pointer; transition: color 0.3s;" onmouseover="this.style.color='var(--teal-300)'" onmouseout="this.style.color='var(--purple-300)'">→ How to reset my password?</p>
+                  </div>
+                </div>
+              </div>
+
+              <!-- FAQ Category 3 -->
+              <div class="card">
+                <div class="card-glow"></div>
+                <div class="card-content" style="padding: 1.5rem;">
+                  <div style="display: flex; gap: 1rem; margin-bottom: 1rem;">
+                    <div class="card-icon gradient-purple-teal-mix" style="width: 3rem; height: 3rem; margin: 0;">
+                      <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                      </svg>
+                    </div>
+                    <h3 style="font-size: 1.25rem; color: white; padding-top: 0.5rem;">Mentorship</h3>
+                  </div>
+                  <div style="margin-left: 4rem; color: var(--purple-300); font-size: 0.875rem;">
+                    <p style="margin-bottom: 0.5rem; cursor: pointer; transition: color 0.3s;" onmouseover="this.style.color='var(--teal-300)'" onmouseout="this.style.color='var(--purple-300)'">→ How do I connect with mentors?</p>
+                    <p style="margin-bottom: 0.5rem; cursor: pointer; transition: color 0.3s;" onmouseover="this.style.color='var(--teal-300)'" onmouseout="this.style.color='var(--purple-300)'">→ Are mentoring sessions free?</p>
+                    <p style="cursor: pointer; transition: color 0.3s;" onmouseover="this.style.color='var(--teal-300)'" onmouseout="this.style.color='var(--purple-300)'">→ Can I change my mentor?</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-glow"></div>
+                <div class="card-content" style="padding: 1.5rem; text-align: center;">
+                  <p style="color: var(--purple-200); margin-bottom: 1rem;">Can't find what you're looking for?</p>
+                  <button class="btn-secondary" style="padding: 0.75rem 2rem;">
+                    View Full FAQ
+                    <svg class="icon" viewBox="0 0 24 24">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2" fill="none"/>
+                      <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3M12 17h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                    </svg>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Support Section -->
+    <section class="hero" style="min-height: auto;">
+      <div class="hero-bg">
+        <img src="https://i.pinimg.com/1200x/c0/f0/16/c0f0167a545b3e55eded2d51622b17fa.jpg" alt="Support and feedback">
+        <div class="hero-overlay"></div>
+      </div>
+      
+      <div class="container" style="position: relative; z-index: 10; padding: 6rem 0;">
+        <div style="max-width: 56rem; margin: 0 auto; text-center;">
+          <svg class="icon-xl" style="color: var(--teal-400); margin: 0 auto 2rem;" viewBox="0 0 24 24">
+            <path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          </svg>
+          <h2 style="font-size: 2.5rem; color: white; margin-bottom: 1.5rem;">
+            We Value Your <span class="text-gradient">Feedback</span>
+          </h2>
+          <p style="font-size: 1.25rem; color: var(--purple-100); margin-bottom: 2rem; line-height: 1.6;">
+            Your suggestions and experiences help us create a better learning platform for everyone. Thank you for being part of our community!
+          </p>
+          <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem;">
+            <div style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 12px; padding: 1rem 1.5rem; border: 1px solid rgba(255, 255, 255, 0.2);">
+              <div style="font-size: 1.5rem; font-weight: 700; color: white;">24/7</div>
+              <div style="color: var(--purple-200); font-size: 0.875rem;">Support</div>
+            </div>
+            <div style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 12px; padding: 1rem 1.5rem; border: 1px solid rgba(255, 255, 255, 0.2);">
+              <div style="font-size: 1.5rem; font-weight: 700; color: white;">&lt; 24hrs</div>
+              <div style="color: var(--purple-200); font-size: 0.875rem;">Response Time</div>
+            </div>
+            <div style="background-color: rgba(255, 255, 255, 0.1); backdrop-filter: blur(20px); border-radius: 12px; padding: 1rem 1.5rem; border: 1px solid rgba(255, 255, 255, 0.2);">
+              <div style="font-size: 1.5rem; font-weight: 700; color: white;">98%</div>
+              <div style="color: var(--purple-200); font-size: 0.875rem;">Satisfaction</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-section">
+          <div style="display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1rem;">
+            <div style="position: relative;">
+              <div style="position: absolute; inset: 0; background: linear-gradient(to right, var(--purple-600), var(--teal-500)); border-radius: 12px; filter: blur(12px); opacity: 0.75;"></div>
+              <div style="position: relative; width: 40px; height: 40px; background: linear-gradient(to bottom right, var(--purple-600), var(--teal-500)); border-radius: 12px; display: flex; align-items: center; justify-content: center;">
+                <svg class="icon" style="color: white;" viewBox="0 0 24 24">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+              </div>
+            </div>
+            <span class="text-gradient" style="font-size: 1.25rem; font-weight: 700;">LateralBridge</span>
+          </div>
+          <p class="footer-text">
+            Bridging the knowledge gap for lateral entry B.Tech students through comprehensive support and resources.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="learning-bridge.html" class="footer-link"><span class="footer-bullet"></span> Foundation Courses</a></li>
+            <li><a href="self-assessment.html" class="footer-link"><span class="footer-bullet"></span> Take Assessment</a></li>
+            <li><a href="mentor-support.html" class="footer-link"><span class="footer-bullet"></span> Find a Mentor</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-section">
+          <h4>Contact</h4>
+          <p class="footer-text mb-1">Email: support@lateralbridge.edu</p>
+          <p class="footer-text mb-1">Phone No: +91 8985-514-495</p>
+          <p class="footer-text">Help Desk: Available 24/7</p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          &copy; 2026 LateralBridge. All rights reserved. Built with care for lateral entry students.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    function handleFormSubmit(event) {
+      event.preventDefault();
+      
+      // Hide form and show success message
+      document.getElementById('formContainer').classList.add('hidden');
+      document.getElementById('formSuccess').classList.add('active');
+      
+      // Reset after 3 seconds
+      setTimeout(() => {
+        document.getElementById('contactForm').reset();
+        document.getElementById('formContainer').classList.remove('hidden');
+        document.getElementById('formSuccess').classList.remove('active');
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
